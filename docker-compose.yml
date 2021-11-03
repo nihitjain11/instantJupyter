@@ -1,0 +1,15 @@
+version: '3'
+services:
+  notebook:
+    image: jupyter/datascience-notebook
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - NB_USER=$USER
+      - CHOWN_HOME=yes
+    user: root
+    # working_dir: /home/$NB_USER
+    ports:
+      - 10000:8888
+    volumes:
+      - $HOME/$USER:/home/$USER/work
+      
