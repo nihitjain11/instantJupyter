@@ -11,5 +11,5 @@ services:
     ports:
       - 10000:8888
     volumes:
-      - $HOME/$USER:/home/$USER/work
+      - $HOME:/home/work
       
