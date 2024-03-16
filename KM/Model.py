@@ -11,6 +11,8 @@ api = Api(app)
 knn_model = './knn.pkl'
 logreg_model = './logreg.pkl'
 
+iris_target_names = ['setosa', 'versicolor', 'virginica']
+
 @app.route('/knn')
 def knn():  
     sl = float(request.args.get('sl'))
@@ -21,7 +23,7 @@ def knn():
     with open(knn_model, 'rb') as k:
         PickleModel = pickle.load(k)
     Answer = PickleModel.predict(data)
-    return jsonify(Answer.tolist())
+    return jsonify(iris_target_names[Answer.item()])
 
 @app.route('/logreg')
 def logreg():  
@@ -33,7 +35,7 @@ def logreg():
     with open(logreg_model, 'rb') as k:
         PickleModel = pickle.load(k)
     Answer = PickleModel.predict(data)
-    return jsonify(Answer.tolist())
+    return jsonify(iris_target_names[Answer.item()])
 
 @app.route('/')
 def index():
