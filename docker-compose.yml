@@ -12,5 +12,4 @@ services:
       - 10000:8888
       - 5071:5071 #for flask app
     volumes:
-      - ./KM:/home/nihitjain/work
-      
+      - ./:/home/$USER

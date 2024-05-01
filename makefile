@@ -1,5 +1,5 @@
 notebook:
-	docker-compose up -d
+	USER=`whoami` docker-compose up -d
 	sleep 10
 	bash -c "echo -e '\nTo access the server, open one of these URLs in a browser:\n'"
 	docker-compose logs | grep -Eo '(http|https)://.*'
