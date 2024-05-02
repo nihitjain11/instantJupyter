@@ -11,5 +11,7 @@ services:
     ports:
       - 10000:8888
       - 5071:5071 #for flask app
+      - 8501:8501 #for streamlit app
+      # add additional ports as per your requirement
     volumes:
       - ./:/home/$USER
