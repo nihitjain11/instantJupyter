@@ -15,7 +15,7 @@ make notebook
 
 # Unzip Data
 ```
-unzip iris.zip
+unzip iris.zip -d iris
 ```
 
 # Notebook
