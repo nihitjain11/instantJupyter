@@ -1,7 +1,9 @@
 # Product Service
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, url_for
 from flask_restful import Resource, Api
 import _pickle as pickle
+import numpy as np
+from sklearn import datasets, linear_model
 # import numpy as np
 # from sklearn import datasets, linear_model
 
@@ -23,7 +25,9 @@ def knn():
     with open(knn_model, 'rb') as k:
         PickleModel = pickle.load(k)
     Answer = PickleModel.predict(data)
-    return jsonify(iris_target_names[Answer.item()])
+    Prediction = iris_target_names[Answer.item()]
+    # return jsonify(iris_target_names[Answer.item()])
+    return render_template('result.html', prediction=Prediction)
 
 @app.route('/logreg')
 def logreg():  
@@ -35,11 +39,17 @@ def logreg():
     with open(logreg_model, 'rb') as k:
         PickleModel = pickle.load(k)
     Answer = PickleModel.predict(data)
-    return jsonify(iris_target_names[Answer.item()])
+    Prediction = iris_target_names[Answer.item()]
+    # return jsonify(iris_target_names[Answer.item()])
+    return render_template('result.html', prediction=Prediction)
 
 @app.route('/')
 def index():
-    return "Please run /knn or /logreg with sl, sw, pl, pw as parameters"
+    # return "Please run /knn or /logreg with sl, sw, pl, pw as parameters"
+    return render_template('index.html')
+
+
+
 
 
 if __name__ == '__main__':

@@ -1,0 +1,84 @@
+<head>
+    <title>Iris Species Predictor | ML Models</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+    .div {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .roboto-light {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+    .roboto-light-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+    }
+</style>
+
+<h1 class="roboto-light-italic">Predicting Iris Species</h1>
+
+<div class="div">
+    <h2 class="roboto-light-italic">K-Nearest Neighbors</h2>
+    <p class="roboto-light">K-Nearest Neighbors (KNN) is a simple algorithm that stores all available cases and classifies new cases based on a similarity measure.</p>
+    <p class="roboto-light">It is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until function evaluation.</p>
+
+    <form method="GET" action="/knn">
+        <div class="div" style="display: flex;">
+            <div style="flex: 1;">
+                <label for="sl">Sepal Length:</label>
+                <input type="text" id="sl" name="sl"><br><br>
+                <label for="sw">Sepal Width:</label>
+                <input type="text" id="sw" name="sw"><br><br>
+            </div>
+            <div style="flex: 1;">
+                <label for="pl">Petal Length:</label>
+                <input type="text" id="pl" name="pl"><br><br>
+                <label for="pw">Petal Width:</label>
+                <input type="text" id="pw" name="pw"><br><br>
+            </div>
+            <div style="flex: 1;">
+                <input type="submit" value="Predict">
+            </div> 
+        </div>       
+    </form>
+</div>
+
+<br>
+
+<div class="div">
+    <h2 class="roboto-light-italic">Logistic Regression</h2>
+    <p class="roboto-light">Logistic regression is a statistical model that in its basic form uses a logistic function to model a binary dependent variable.</p>
+    <p class="roboto-light">Logistic regression is used in various fields, including machine learning, most medical fields, and social sciences.</p>
+<form method="GET" action="/logreg">
+    <div class="div" style="display: flex;">
+        <div style="flex: 1;">
+            <label for="sl">Sepal Length:</label>
+            <input type="text" id="sl" name="sl"><br><br>
+            <label for="sw">Sepal Width:</label>
+            <input type="text" id="sw" name="sw"><br><br>
+        </div>
+        <div style="flex: 1;">
+            <label for="pl">Petal Length:</label>
+            <input type="text" id="pl" name="pl"><br><br>
+            <label for="pw">Petal Width:</label>
+            <input type="text" id="pw" name="pw"><br><br>
+        </div>
+        <div style="flex: 1;">
+            <input type="submit" value="Predict">
+        </div>
+    </div>
+</form>

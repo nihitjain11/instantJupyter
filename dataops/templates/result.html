@@ -1,0 +1,52 @@
+<style>
+  .div {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  .image {
+    width: 400px;
+    /* height: 200px; */
+  }
+</style>
+
+<h1>Iris Species Identified:</h1>
+<div class="div" style="display: flex">
+    {% if prediction == 'setosa' %}
+        <div style="flex: 1">
+            <img class="image" src={{ url_for('static', filename='setosa.jpeg') }} alt="Iris Setosa">
+        </div>
+        <div style="flex: 1">
+            <h2>Setosa</h2>
+            <p>Setosa is a species of Iris that is native to the eastern Mediterranean region.</p>
+            <p>It is a perennial plant that grows to a height of 10-20 cm.</p>
+            <p>It has long, narrow leaves that are grey-green in color.</p>
+            <p>It has a white flower with a yellow center.</p>
+        </div>
+    {% elif prediction == 'versicolor' %}
+        <div style="flex: 1">
+            <img class="image" src={{ url_for('static', filename='versicolor.jpeg') }} alt="Iris Versicolor">
+        </div>
+        <div style="flex: 1">
+            <h2>Versicolor</h2>
+            <p>Versicolor is a species of Iris that is native to the eastern Mediterranean region.</p>
+            <p>It is a perennial plant that grows to a height of 10-20 cm.</p>
+            <p>It has long, narrow leaves that are grey-green in color.</p>
+            <p>It has a white flower with a yellow center.</p>
+        </div>
+    {% elif prediction == 'virginica' %}
+        <div style="flex: 1">
+            <img class="image" src={{ url_for('static', filename='virginica.jpeg') }} alt="Iris Virginica">
+        <div>
+        </div>
+        <div style="flex: 1">
+            <h2>Virginica</h2>
+            <p>Virginica is a species of Iris that is native to the eastern Mediterranean region.</p>
+            <p>It is a perennial plant that grows to a height of 10-20 cm.</p>
+            <p>It has long, narrow leaves that are grey-green in color.</p>
+            <p>It has a white flower with a yellow center.</p>
+        </div>
+    {% endif %}
+  </div>
+</div>
