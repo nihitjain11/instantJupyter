@@ -51,7 +51,7 @@ df_pred['education'] = df_pred['education'].apply(transform)
 model = joblib.load('fhs_rf_model.pkl')
 prediction = model.predict(df_pred)
 
-st.write(prediction)
+# st.write(prediction)
 
 if st.button('Predict'):
     if(prediction[0]==0):
